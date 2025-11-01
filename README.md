@@ -119,6 +119,26 @@ MagnusBilling connectivity example:
 curl http://localhost:3000/api/mb/ping
 ```
 
+## Live Chat (optional)
+Choose ONE provider. If both are enabled, Crisp takes precedence.
+
+Crisp
+```
+LIVECHAT_CRISP_ENABLED=true
+LIVECHAT_CRISP_WEBSITE_ID={{CRISP_WEBSITE_ID}}
+```
+
+Tawk.to
+```
+LIVECHAT_TAWK_ENABLED=true
+LIVECHAT_TAWK_PROPERTY_ID={{TAWK_PROPERTY_ID}}
+LIVECHAT_TAWK_WIDGET_ID={{TAWK_WIDGET_ID}}
+```
+
+Backward compatibility: `LIVECHAT_ENABLED=true` is treated as enabling Crisp.
+
+The widget loads on all pages via `views/partials/footer.ejs`.
+
 ## MagnusBilling Notes
 - The client in `utils/mbClient.js` is a scaffold. Update `authHeaders()` and endpoint paths to match your MagnusBilling deployment or wrapper requirements.
 - If you prefer token auth, set `MB_API_TOKEN` and adapt headers accordingly.

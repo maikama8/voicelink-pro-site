@@ -2,31 +2,60 @@
 <%- include('../partials/header') %>
 
 <main id="about">
-  <section class="section section-alt" aria-labelledby="why-heading">
+  <section class="hero" aria-labelledby="about-hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 id="about-hero">Built for Reliability. Designed for Scale.</h1>
+        <p>We help businesses communicate better with carrier-grade infrastructure, premium routes, and responsive support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="values-heading">
     <div class="container">
-      <h1 id="why-heading" class="section-title">About <%= SITE_NAME %></h1>
+      <h2 id="values-heading" class="section-title">Our Core Principles</h2>
       <div class="grid bullets-3">
         <div class="bullet">
-          <div class="bullet-icon" aria-hidden="true">✓</div>
+          <div class="bullet-icon" aria-hidden="true">🔁</div>
           <div class="bullet-body">
-            <h3>Rock‑solid Reliability</h3>
-            <p>99.99% uptime SLA with redundant global carriers for uninterrupted calls.</p>
+            <h3>Redundancy Everywhere</h3>
+            <p>Multi-carrier routing, geo-redundant infrastructure, and active monitoring ensure uptime.</p>
           </div>
         </div>
         <div class="bullet">
-          <div class="bullet-icon" aria-hidden="true">✓</div>
+          <div class="bullet-icon" aria-hidden="true">🎯</div>
           <div class="bullet-body">
-            <h3>HD Voice Quality</h3>
-            <p>Wideband audio and smart routing deliver crisp, natural conversations.</p>
+            <h3>Quality First</h3>
+            <p>We prioritize HD voice, low latency, and call stability for every conversation.</p>
           </div>
         </div>
         <div class="bullet">
-          <div class="bullet-icon" aria-hidden="true">✓</div>
+          <div class="bullet-icon" aria-hidden="true">🛡️</div>
           <div class="bullet-body">
-            <h3>Simple, Fair Pricing</h3>
-            <p>Transparent plans with everything you need and no hidden fees.</p>
+            <h3>Security & Compliance</h3>
+            <p>Best‑practice encryption and fraud detection help protect your network and users.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <h2 id="why-heading" class="section-title">Why <%= SITE_NAME %></h2>
+      <div class="grid cards-3">
+        <article class="card">
+          <h3>Carrier‑grade Backbone</h3>
+          <p>Direct interconnects with global carriers and smart routing for consistent quality.</p>
+        </article>
+        <article class="card">
+          <h3>Transparent Pricing</h3>
+          <p>Clear, predictable pricing and billing with no hidden fees.</p>
+        </article>
+        <article class="card">
+          <h3>Partner Approach</h3>
+          <p>We work with you to tailor call flows, integrations, and analytics to your needs.</p>
+        </article>
       </div>
     </div>
   </section>

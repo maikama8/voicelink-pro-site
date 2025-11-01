@@ -2,22 +2,178 @@
 <%- include('../partials/header') %>
 
 <main id="services">
-  <section class="section" aria-labelledby="services-heading">
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="services-hero-heading">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 id="services-hero-heading">Complete VoIP Solutions for Modern Business</h1>
+        <p>From enterprise SIP trunking to advanced call centers, we deliver reliable voice services with global reach and crystal-clear quality.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contact">Get Started</a>
+          <a class="btn btn-outline" href="/pricing">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voice Services -->
+  <section class="section" aria-labelledby="voice-heading">
     <div class="container">
-      <h1 id="services-heading" class="section-title">Services</h1>
+      <h2 id="voice-heading" class="section-title">Voice Termination & SIP Trunking</h2>
       <div class="grid cards-3">
         <article class="card">
-          <h3>SIP Trunking</h3>
-          <p>Scale your phone systems with cost‑effective SIP trunks and global coverage.</p>
+          <h3>Enterprise SIP Trunking</h3>
+          <p>Scalable SIP trunk solutions with multi-carrier routing, advanced QoS, and 99.99% uptime SLA. Perfect for businesses of all sizes.</p>
+          <ul style="margin-top: 0.75rem; padding-left: 1rem; color: var(--muted);">
+            <li>Multi-carrier redundancy</li>
+            <li>Direct CLI control</li>
+            <li>Real-time call routing</li>
+            <li>Instant provisioning</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Wholesale Voice Termination</h3>
+          <p>High-quality voice termination for carriers and resellers with competitive rates and global coverage to 200+ countries.</p>
+          <ul style="margin-top: 0.75rem; padding-left: 1rem; color: var(--muted);">
+            <li>Premium route quality</li>
+            <li>Volume discounts</li>
+            <li>24/7 NOC support</li>
+            <li>Real-time analytics</li>
+          </ul>
         </article>
         <article class="card">
           <h3>Hosted PBX</h3>
-          <p>Cloud PBX with IVR, voicemail‑to‑email, call queues, and analytics built‑in.</p>
+          <p>Full-featured cloud PBX with advanced IVR, call queues, voicemail-to-email, and integrated analytics dashboard.</p>
+          <ul style="margin-top: 0.75rem; padding-left: 1rem; color: var(--muted);">
+            <li>Advanced IVR & call flows</li>
+            <li>Call recording & monitoring</li>
+            <li>Mobile & desktop apps</li>
+            <li>CRM integrations</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phone Numbers -->
+  <section class="section section-alt" aria-labelledby="numbers-heading">
+    <div class="container">
+      <h2 id="numbers-heading" class="section-title">Phone Numbers & DIDs</h2>
+      <div class="grid cards-3">
+        <article class="card">
+          <h3>Local & National Numbers</h3>
+          <p>Local presence in 70+ countries with instant activation and number portability from any provider.</p>
         </article>
         <article class="card">
-          <h3>Call Center</h3>
-          <p>Omnichannel support, call recording, and live dashboards to optimize performance.</p>
+          <h3>Toll-Free Numbers</h3>
+          <p>Professional toll-free numbers (0800, 1800) for customer service and sales teams with advanced call routing.</p>
         </article>
+        <article class="card">
+          <h3>Mobile Numbers</h3>
+          <p>Mobile DIDs for SMS and voice with full number portability and real-time provisioning.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call Center Solutions -->
+  <section class="section" aria-labelledby="callcenter-heading">
+    <div class="container">
+      <h2 id="callcenter-heading" class="section-title">Call Center & Contact Center</h2>
+      <div class="grid cards-3">
+        <article class="card">
+          <h3>Inbound Call Centers</h3>
+          <p>Advanced ACD, skill-based routing, queue management, and real-time dashboards for optimal customer service.</p>
+        </article>
+        <article class="card">
+          <h3>Outbound Campaigns</h3>
+          <p>Powerful auto-dialer with predictive, progressive, and preview modes. Built-in CRM and lead management.</p>
+        </article>
+        <article class="card">
+          <h3>Omnichannel Support</h3>
+          <p>Unified communications across voice, SMS, email, and chat with intelligent routing and agent desktop.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMS & Messaging -->
+  <section class="section section-alt" aria-labelledby="sms-heading">
+    <div class="container">
+      <h2 id="sms-heading" class="section-title">SMS & Messaging</h2>
+      <div class="grid bullets-3">
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">📱</div>
+          <div class="bullet-body">
+            <h3>Business SMS</h3>
+            <p>Professional SMS for customer notifications, 2FA, and marketing campaigns with delivery reports.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🚀</div>
+          <div class="bullet-body">
+            <h3>Bulk SMS</h3>
+            <p>High-volume SMS delivery with advanced scheduling, personalization, and comprehensive analytics.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🔗</div>
+          <div class="bullet-body">
+            <h3>API Integration</h3>
+            <p>RESTful APIs for seamless integration with your existing systems and applications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" aria-labelledby="features-heading">
+    <div class="container">
+      <h2 id="features-heading" class="section-title">Advanced Features</h2>
+      <div class="grid bullets-3">
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">⚡</div>
+          <div class="bullet-body">
+            <h3>5-Minute Setup</h3>
+            <p>Instant service activation with automated provisioning and immediate access to your portal.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">📊</div>
+          <div class="bullet-body">
+            <h3>Real-Time Analytics</h3>
+            <p>Comprehensive reporting with live call monitoring, quality metrics, and business intelligence.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🌐</div>
+          <div class="bullet-body">
+            <h3>Global Reach</h3>
+            <p>Premium voice routes and phone numbers in 200+ destinations worldwide with local presence.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🔒</div>
+          <div class="bullet-body">
+            <h3>Enterprise Security</h3>
+            <p>Bank-grade encryption, fraud protection, and compliance with industry standards.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🎧</div>
+          <div class="bullet-body">
+            <h3>24/7 Support</h3>
+            <p>Dedicated technical support team available around the clock with SLA guarantees.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">💳</div>
+          <div class="bullet-body">
+            <h3>Flexible Billing</h3>
+            <p>Pay-as-you-use pricing with multiple payment methods and detailed usage analytics.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

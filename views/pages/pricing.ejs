@@ -2,9 +2,22 @@
 <%- include('../partials/header') %>
 
 <main id="pricing">
+  <section class="hero" aria-labelledby="pricing-hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 id="pricing-hero">Simple, Transparent Pricing</h1>
+        <p>Choose a plan that fits. No hidden fees. Scale up or down anytime.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contact">Start Your Quote</a>
+          <a class="btn btn-outline" href="/services">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="pricing-heading">
     <div class="container">
-      <h1 id="pricing-heading" class="section-title">Pricing</h1>
+      <h2 id="pricing-heading" class="section-title">Plans</h2>
       <div class="grid pricing-3">
         <article id="starter" class="price-card">
           <h3 class="plan">Starter</h3>
@@ -12,6 +25,7 @@
           <ul class="features">
             <li>Unlimited domestic calls</li>
             <li>Basic IVR & voicemail</li>
+            <li>Web portal access</li>
             <li>Email support</li>
           </ul>
           <a class="btn btn-outline" href="/contact">Choose Starter</a>
@@ -21,8 +35,9 @@
           <h3 class="plan">Business</h3>
           <p class="price"><span class="currency">$</span>19<span class="per">/user/mo</span></p>
           <ul class="features">
-            <li>All Starter features</li>
+            <li>Everything in Starter</li>
             <li>Call queues & recording</li>
+            <li>Advanced IVR & analytics</li>
             <li>Priority support</li>
           </ul>
           <a class="btn btn-primary" href="/contact">Choose Business</a>
@@ -34,9 +49,39 @@
             <li>Custom SLAs</li>
             <li>Global routing & SBCs</li>
             <li>Dedicated success manager</li>
+            <li>Custom integrations</li>
           </ul>
           <a class="btn btn-outline" href="/contact">Talk to Sales</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <h2 id="faq-heading" class="section-title">Pricing FAQs</h2>
+      <div class="grid bullets-3">
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🔁</div>
+          <div class="bullet-body">
+            <h3>Can I change plans later?</h3>
+            <p>Yes. Upgrade or downgrade anytime. Billing is prorated.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🌍</div>
+          <div class="bullet-body">
+            <h3>International rates?</h3>
+            <p>We offer competitive global rates. Contact sales for country-specific pricing.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🧾</div>
+          <div class="bullet-body">
+            <h3>What’s included?</h3>
+            <p>All core features, secure infrastructure, and support are included. No hidden fees.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

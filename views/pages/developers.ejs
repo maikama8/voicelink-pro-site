@@ -1,0 +1,70 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main id="developers">
+  <section class="hero" aria-labelledby="dev-hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 id="dev-hero">Developers</h1>
+        <p>Use our backend endpoints or call MagnusBilling directly. Configure your credentials in <code>.env</code> and start building.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/api/mb/ping" target="_blank" rel="noopener">Test API Ping</a>
+          <a class="btn btn-outline" href="/billing">Open Billing Portal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="dev-setup">
+    <div class="container">
+      <h2 id="dev-setup" class="section-title">Setup</h2>
+      <div class="grid bullets-3">
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🔐</div>
+          <div class="bullet-body">
+            <h3>Auth & Environment</h3>
+            <p>Set <code>MB_API_BASE_URL</code> and either <code>MB_API_TOKEN</code> or <code>MB_API_KEY</code>/<code>MB_API_SECRET</code> in your <code>.env</code>.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🧪</div>
+          <div class="bullet-body">
+            <h3>Local Testing</h3>
+            <p>Run <code>npm run dev</code> and hit <code>/api/mb/ping</code> to verify connectivity.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">🧩</div>
+          <div class="bullet-body">
+            <h3>Client Scaffold</h3>
+            <p>Adjust <code>utils/mbClient.js</code> headers and paths to match your MagnusBilling deployment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="dev-examples">
+    <div class="container">
+      <h2 id="dev-examples" class="section-title">Examples</h2>
+      <div class="grid cards-3">
+        <article class="card">
+          <h3>Ping</h3>
+          <pre><code>curl http://localhost:3000/api/mb/ping</code></pre>
+        </article>
+        <article class="card">
+          <h3>List Customers</h3>
+          <pre><code>curl "http://localhost:3000/api/mb/customers?limit=10"</code></pre>
+        </article>
+        <article class="card">
+          <h3>Node (axios)</h3>
+          <pre><code>import axios from 'axios';
+const res = await axios.get('/api/mb/ping');
+console.log(res.data);</code></pre>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

@@ -17,11 +17,26 @@ app.use(express.urlencoded({ extended: true }));
 // Site-wide locals
 app.locals.SITE_NAME = 'Voicelink Pro';
 app.locals.MB_PORTAL_URL = process.env.MB_PORTAL_URL || '#';
+const _s = (v) => String(v || '').toLowerCase();
+const legacyEnabled = _s(process.env.LIVECHAT_ENABLED) === 'true';
+app.locals.LIVECHAT = {
+  crisp: {
+    enabled: (_s(process.env.LIVECHAT_CRISP_ENABLED) === 'true') || legacyEnabled,
+    websiteId: process.env.LIVECHAT_CRISP_WEBSITE_ID || null,
+  },
+  tawk: {
+    enabled: _s(process.env.LIVECHAT_TAWK_ENABLED) === 'true',
+    propertyId: process.env.LIVECHAT_TAWK_PROPERTY_ID || null,
+    widgetId: process.env.LIVECHAT_TAWK_WIDGET_ID || null,
+  }
+};
 
 // Routes (pages)
 app.get('/', (req, res) => res.render('pages/index'));
 app.get('/services', (req, res) => res.render('pages/services'));
 app.get('/pricing', (req, res) => res.render('pages/pricing'));
+app.get('/solutions', (req, res) => res.render('pages/solutions'));
+app.get('/developers', (req, res) => res.render('pages/developers'));
 app.get('/about', (req, res) => res.render('pages/about'));
 app.get('/contact', (req, res) => res.render('pages/contact', { status: null, error: null }));
 app.get('/billing', (req, res) => res.render('pages/billing'));
