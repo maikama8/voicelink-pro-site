@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const nodemailer = require('nodemailer');
+const session = require('express-session');
 require('dotenv').config();
 
 const app = express();
@@ -14,6 +15,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'dev-secret-change-me',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { httpOnly: true }
+}));
 
 // Site-wide locals
 app.locals.SITE_NAME = 'Voicelink Pro';
@@ -32,6 +39,13 @@ app.locals.LIVECHAT = {
   }
 };
 
+// Expose session user to templates
+app.use((req, res, next) => {
+  res.locals.currentUser = req.session?.user || null;
+  res.locals.currentRole = req.session?.role || null;
+  next();
+});
+
 // Routes (pages)
 app.get('/', (req, res) => res.render('pages/index'));
 app.get('/services', (req, res) => res.render('pages/services'));
@@ -41,6 +55,28 @@ app.get('/developers', (req, res) => res.render('pages/developers'));
 app.get('/about', (req, res) => res.render('pages/about'));
 app.get('/contact', (req, res) => res.render('pages/contact', { status: null, error: null }));
 app.get('/billing', (req, res) => res.render('pages/billing'));
+
+// Auth routes and protected pages
+const authRouter = require('./routes/auth');
+app.use('/', authRouter);
+
+function requireAuth(req, res, next) {
+  if (!req.session?.mbToken) return res.redirect('/login');
+  next();
+}
+
+function requireRole(...roles) {
+  return (req, res, next) => {
+    const r = req.session?.role;
+    if (!r || !roles.map(String).map(s=>s.toLowerCase()).includes(String(r).toLowerCase())) {
+      return res.status(403).render('pages/forbidden');
+    }
+    next();
+  };
+}
+
+app.get('/dashboard', requireAuth, (req, res) => res.render('pages/dashboard'));
+app.get('/admin', requireAuth, requireRole('admin', 'root'), (req, res) => res.render('pages/admin'));
 
 // Contact form submission
 app.post('/contact', async (req, res) => {

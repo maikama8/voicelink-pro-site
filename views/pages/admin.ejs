@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main id="admin">
+  <section class="section" aria-labelledby="admin-heading">
+    <div class="container">
+      <h1 id="admin-heading" class="section-title">Admin</h1>
+      <p>Restricted area for admin/root roles.</p>
+      <div class="grid cards-3" style="margin-top:1rem">
+        <article class="card">
+          <h3>Users</h3>
+          <p>List and manage users.</p>
+          <a class="btn btn-outline" href="/api/mb/users" target="_blank" rel="noopener">Open JSON</a>
+        </article>
+        <article class="card">
+          <h3>Pricing & Plans</h3>
+          <p>Review product plans and rates.</p>
+          <a class="btn btn-outline" href="/api/mb/plans" target="_blank" rel="noopener">Open JSON</a>
+        </article>
+        <article class="card">
+          <h3>Numbers</h3>
+          <p>Approve and manage DIDs.</p>
+          <a class="btn btn-outline" href="/api/mb/dids/pending" target="_blank" rel="noopener">Open JSON</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

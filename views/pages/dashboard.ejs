@@ -1,0 +1,33 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main id="dashboard">
+  <section class="section" aria-labelledby="dash-heading">
+    <div class="container">
+      <h1 id="dash-heading" class="section-title">Dashboard</h1>
+      <p>Signed in as <strong><%= currentUser && currentUser.email %></strong> (<%= currentRole %>).</p>
+      <div class="grid cards-3" style="margin-top:1rem">
+        <article class="card">
+          <h3>Profile</h3>
+          <p>View your MagnusBilling account details.</p>
+          <a class="btn btn-outline" href="/api/mb/profile" target="_blank" rel="noopener">Open JSON</a>
+        </article>
+        <article class="card">
+          <h3>Invoices</h3>
+          <p>Check recent invoices and payments.</p>
+          <a class="btn btn-outline" href="/api/mb/invoices" target="_blank" rel="noopener">Open JSON</a>
+        </article>
+        <article class="card">
+          <h3>Numbers</h3>
+          <p>Manage DIDs and phone numbers.</p>
+          <a class="btn btn-outline" href="/api/mb/dids" target="_blank" rel="noopener">Open JSON</a>
+        </article>
+      </div>
+      <form method="post" action="/logout" style="margin-top:1rem">
+        <button class="btn btn-cta" type="submit">Log out</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

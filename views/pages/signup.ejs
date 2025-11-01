@@ -1,0 +1,35 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main id="signup">
+  <section class="section" aria-labelledby="signup-heading">
+    <div class="container">
+      <h1 id="signup-heading" class="section-title">Create Account</h1>
+
+      <% if (error) { %>
+        <div class="card" role="alert" style="border-color:#ef4444">Error: <%= error %></div>
+      <% } %>
+
+      <form class="contact-form" action="/signup" method="post">
+        <div class="form-grid">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Username</span>
+            <input type="text" name="username" placeholder="yourname" required>
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" placeholder="••••••••" required>
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign up</button>
+        <p class="form-note">Already have an account? <a href="/login">Sign in</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

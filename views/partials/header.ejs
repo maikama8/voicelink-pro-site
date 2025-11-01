@@ -12,8 +12,20 @@
         <li><a href="/about">About</a></li>
         <li><a href="/billing">Billing</a></li>
         <li><a href="/contact">Contact</a></li>
+        <% if (!currentUser) { %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign up</a></li>
+        <% } else { %>
+          <li><a href="/dashboard">Account</a></li>
+        <% } %>
       </ul>
-      <a class="btn btn-cta" href="/contact">Get a Quote</a>
+      <% if (currentUser) { %>
+        <form method="post" action="/logout" style="display:inline">
+          <button class="btn btn-cta" type="submit">Logout</button>
+        </form>
+      <% } else { %>
+        <a class="btn btn-cta" href="/contact">Get a Quote</a>
+      <% } %>
     </nav>
   </div>
 </header>

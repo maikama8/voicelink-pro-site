@@ -140,6 +140,20 @@ Backward compatibility: `LIVECHAT_ENABLED=true` is treated as enabling Crisp.
 
 The widget loads on all pages via `views/partials/footer.ejs`.
 
+## Authentication (MagnusBilling-backed)
+- Login/Signup pages: `GET /login`, `POST /login`, `GET /signup`, `POST /signup`, `POST /logout`
+- On login, the app calls MB_AUTH_LOGIN_PATH and stores a user token in session; it then fetches the profile from MB_AUTH_PROFILE_PATH to derive role (root/admin/user).
+- Protected routes: `/dashboard` (any logged-in user), `/admin` (admin/root only).
+- Configure auth paths in `.env` (defaults provided). Set `SESSION_SECRET` for sessions.
+
+Env keys
+```
+MB_AUTH_LOGIN_PATH=/api/auth/login
+MB_AUTH_SIGNUP_PATH=/api/auth/signup
+MB_AUTH_PROFILE_PATH=/api/auth/me
+SESSION_SECRET=...
+```
+
 ## MagnusBilling Notes
 - The client in `utils/mbClient.js` is a scaffold. Update `authHeaders()` and endpoint paths to match your MagnusBilling deployment or wrapper requirements.
 - If you prefer token auth, set `MB_API_TOKEN` and adapt headers accordingly.
