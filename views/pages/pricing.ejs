@@ -1,0 +1,45 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main id="pricing">
+  <section class="section" aria-labelledby="pricing-heading">
+    <div class="container">
+      <h1 id="pricing-heading" class="section-title">Pricing</h1>
+      <div class="grid pricing-3">
+        <article id="starter" class="price-card">
+          <h3 class="plan">Starter</h3>
+          <p class="price"><span class="currency">$</span>9<span class="per">/user/mo</span></p>
+          <ul class="features">
+            <li>Unlimited domestic calls</li>
+            <li>Basic IVR & voicemail</li>
+            <li>Email support</li>
+          </ul>
+          <a class="btn btn-outline" href="/contact">Choose Starter</a>
+        </article>
+        <article id="business" class="price-card highlighted">
+          <div class="badge">Most Popular</div>
+          <h3 class="plan">Business</h3>
+          <p class="price"><span class="currency">$</span>19<span class="per">/user/mo</span></p>
+          <ul class="features">
+            <li>All Starter features</li>
+            <li>Call queues & recording</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn btn-primary" href="/contact">Choose Business</a>
+        </article>
+        <article id="enterprise" class="price-card">
+          <h3 class="plan">Enterprise</h3>
+          <p class="price"><span class="currency">$</span>Contact</p>
+          <ul class="features">
+            <li>Custom SLAs</li>
+            <li>Global routing & SBCs</li>
+            <li>Dedicated success manager</li>
+          </ul>
+          <a class="btn btn-outline" href="/contact">Talk to Sales</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

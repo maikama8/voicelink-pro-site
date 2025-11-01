@@ -1,0 +1,112 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main id="home">
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 id="hero-heading">Crystal‑clear VoIP for teams that never miss a beat</h1>
+        <p>Power your communications with enterprise‑grade reliability, smart call routing, and simple, transparent pricing.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contact">Start Your Quote</a>
+          <a class="btn btn-outline" href="/services">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services teaser -->
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <h2 id="services-heading" class="section-title">Services</h2>
+      <div class="grid cards-3">
+        <article class="card">
+          <h3>SIP Trunking</h3>
+          <p>Scale your phone systems with cost‑effective SIP trunks and global coverage.</p>
+        </article>
+        <article class="card">
+          <h3>Hosted PBX</h3>
+          <p>Cloud PBX with IVR, voicemail‑to‑email, call queues, and analytics built‑in.</p>
+        </article>
+        <article class="card">
+          <h3>Call Center</h3>
+          <p>Omnichannel support, call recording, and live dashboards to optimize performance.</p>
+        </article>
+      </div>
+      <p><a class="btn btn-outline" href="/services">View all services</a></p>
+    </div>
+  </section>
+
+  <!-- Why Us teaser -->
+  <section class="section section-alt" aria-labelledby="why-heading">
+    <div class="container">
+      <h2 id="why-heading" class="section-title">Why Choose <%= SITE_NAME %></h2>
+      <div class="grid bullets-3">
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">✓</div>
+          <div class="bullet-body">
+            <h3>Rock‑solid Reliability</h3>
+            <p>99.99% uptime SLA with redundant global carriers for uninterrupted calls.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">✓</div>
+          <div class="bullet-body">
+            <h3>HD Voice Quality</h3>
+            <p>Wideband audio and smart routing deliver crisp, natural conversations.</p>
+          </div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-icon" aria-hidden="true">✓</div>
+          <div class="bullet-body">
+            <h3>Simple, Fair Pricing</h3>
+            <p>Transparent plans with everything you need and no hidden fees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing teaser -->
+  <section class="section" aria-labelledby="pricing-heading">
+    <div class="container">
+      <h2 id="pricing-heading" class="section-title">Pricing</h2>
+      <div class="grid pricing-3">
+        <article class="price-card">
+          <h3 class="plan">Starter</h3>
+          <p class="price"><span class="currency">$</span>9<span class="per">/user/mo</span></p>
+          <ul class="features">
+            <li>Unlimited domestic calls</li>
+            <li>Basic IVR & voicemail</li>
+            <li>Email support</li>
+          </ul>
+          <a class="btn btn-outline" href="/pricing#starter">Choose Starter</a>
+        </article>
+        <article class="price-card highlighted">
+          <div class="badge">Most Popular</div>
+          <h3 class="plan">Business</h3>
+          <p class="price"><span class="currency">$</span>19<span class="per">/user/mo</span></p>
+          <ul class="features">
+            <li>All Starter features</li>
+            <li>Call queues & recording</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn btn-primary" href="/pricing#business">Choose Business</a>
+        </article>
+        <article class="price-card">
+          <h3 class="plan">Enterprise</h3>
+          <p class="price"><span class="currency">$</span>Contact</p>
+          <ul class="features">
+            <li>Custom SLAs</li>
+            <li>Global routing & SBCs</li>
+            <li>Dedicated success manager</li>
+          </ul>
+          <a class="btn btn-outline" href="/pricing#enterprise">Talk to Sales</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

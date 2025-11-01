@@ -1,0 +1,42 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main id="contact">
+  <section class="section section-alt" aria-labelledby="contact-heading">
+    <div class="container">
+      <h1 id="contact-heading" class="section-title">Contact Us</h1>
+
+      <% if (status === 'sent') { %>
+        <div class="card" role="status">Thank you! Your message has been sent.</div>
+      <% } %>
+      <% if (error) { %>
+        <div class="card" role="alert" style="border-color:#ef4444">Error: <%= error %></div>
+      <% } %>
+
+      <form class="contact-form" action="/contact" method="post" aria-label="Contact form">
+        <div class="form-grid">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Jane Doe" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="jane@company.com" required>
+          </label>
+          <label>
+            <span>Company</span>
+            <input type="text" name="company" placeholder="Acme Inc.">
+          </label>
+          <label class="full">
+            <span>Message</span>
+            <textarea name="message" rows="4" placeholder="Tell us about your needs..." required></textarea>
+          </label>
+        </div>
+        <button class="btn btn-cta" type="submit">Send Message</button>
+        <p class="form-note" role="note">We’ll get back to you promptly.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
