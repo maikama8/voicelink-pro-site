@@ -100,9 +100,10 @@ Pages
 - `POST /contact` — Submits form, sends email via SMTP
 - `GET /billing` — Billing portal link (from `MB_PORTAL_URL`)
 
-MagnusBilling API (scaffold)
-- `GET /api/mb/ping` — Connectivity test (adjust path in `utils/mbClient.js` per your MB API)
-- `GET /api/mb/customers` — Example passthrough to list customers (adjust for real paths/params)
+MagnusBilling API
+- `GET /api/mb/ping` — Connectivity test (adjust path in `utils/mbClient.js` if needed)
+- `GET /api/mb/customers` — Example list (adjust mapping as needed)
+- Generic proxy: any request to `/api/mb/<path>` is forwarded to `${MB_API_BASE_URL}/<path>` with your credentials. Supports GET/POST/PUT/PATCH/DELETE and passes JSON bodies.
 
 Contact form submit example:
 ```

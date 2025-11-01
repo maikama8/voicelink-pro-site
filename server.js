@@ -13,6 +13,7 @@ app.set('views', path.join(__dirname, 'views'));
 // Static assets and body parsing
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Site-wide locals
 app.locals.SITE_NAME = 'Voicelink Pro';
@@ -117,6 +118,12 @@ app.get('/api/mb/customers', async (req, res) => {
     res.status(502).json({ ok: false, error: e.message });
   }
 });
+
+// Fallback generic proxy for any other MB API path
+try {
+  const mbProxy = require('./routes/mbProxy');
+  app.use('/api/mb', mbProxy);
+} catch (_) {}
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
